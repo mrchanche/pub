@@ -6,9 +6,13 @@ Public facing things/docs/testing... shifting things around to make this a bit c
 
 I roll through a good deal of hardware yearly, this is a place to keep my configs, scripts etc...
 
-### <a href="/pytorch-benchmark">pytorch-benchmark</a>
+### <a href="/gpu">gpu</a>
 
-A useless but performance tracking heat generator that I need to expand upon tracking tokenization performance over the last couple years.
+Just tracking some gpu specific data here.
+
+### <a href="/benchmark">benchmark</a>
+
+Currently a heat generator targeting tokenization performance over the last couple years. The code only functions to time GPUs under a specific load. I would like to add additional benchmarks here and expand the dataset. 
 
 ### <a href="/ai-ml">ai-ml</a>
 
