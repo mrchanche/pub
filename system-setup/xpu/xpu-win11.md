@@ -9,6 +9,7 @@ These steps are very similar to the non-IPEX instructions but this will allow a 
 - No multi-GPU support in Windows
     - You will not be able to utilize any distributed training technologies for Intel GPUs in windows, this is available via the intel xpu docker container in linux. 
     - This also applies to WSL2, which cannot assign more than a single gpu anyways.
+    - You **can** use multi-gpu for software like LM Studio which will aggregate devices together for inference.
 - Working driver as of this writing: 32.0.101.7026 Arc B580
 
 Link to the Intel AI Playground App: <a href="https://game.intel.com/us/stories/introducing-ai-playground/">https://game.intel.com/us/stories/introducing-ai-playground/</a>

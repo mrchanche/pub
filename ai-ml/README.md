@@ -1,1 +1,2 @@
-# GPU Machine Learning and AI Things
+# GPU Machine Learning and AI Notes
+

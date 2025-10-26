@@ -32,15 +32,6 @@ sudo apt-get install -y libze-intel-gpu-raytracing && \
 # Verify
 clinfo | grep "Device Name" && \
 
-# Setup coolercontrol (NEEDS TO BE FULLY TESTED) fan control
-# sudo apt update
-# sudo apt install curl apt-transport-https
-# curl -1sLf 'https://dl.cloudsmith.io/public/coolercontrol/coolercontrol/setup.deb.sh' | sudo -E bash
-# sudo apt update
-# sudo apt install coolercontrol
-# sudo systemctl enable coolercontrolD
-# sudo systemctl start coolercontrolD
-
 # Add user to group render - /dev/dri/renderD*
 sudo gpasswd -a ${USER} render && \
 newgrp render && \
@@ -49,7 +40,7 @@ newgrp render && \
 mkdir -p ~/jupyter-xpu && \
 
 # Build custom docker image based on intel/intel-extension-for-pytorch:2.8.10-xpu-pip-jupyter
-sudo docker build -t phillip-xpu-jupyter:2.8.10 -f Dockerfile . && \
+sudo docker build -t mrchanche-xpu-jupyter:2.8.10 -f Dockerfile . && \
 
 # Create xpu-ipex-docker.sh in ~/
 echo '#!/bin/bash' > ~/xpu-ipex-docker.sh && \
@@ -59,7 +50,7 @@ echo '    --device /dev/dri \' >> ~/xpu-ipex-docker.sh && \
 echo '    -v /dev/dri/by-path:/dev/dri/by-path \' >> ~/xpu-ipex-docker.sh && \
 echo '    -v ~/jupyter-xpu:/jupyter \' >> ~/xpu-ipex-docker.sh && \
 echo '    -w /jupyter \' >> ~/xpu-ipex-docker.sh && \
-echo '    phillip-xpu-jupyter:2.8.10' >> ~/xpu-ipex-docker.sh && \
+echo '    mrchanche-xpu-jupyter:2.8.10' >> ~/xpu-ipex-docker.sh && \
 chmod +x ~/xpu-ipex-docker.sh && \
 
 # Wrap up

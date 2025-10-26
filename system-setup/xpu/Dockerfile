@@ -19,4 +19,4 @@ WORKDIR /jupyter
 # Ensure Jupyter uses /jupyter as notebook directory
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.notebook_dir=/jupyter"]
 
-#sudo docker build -t phillip-xpu-jupyter:2.8.10 -f Dockerfile .
+#sudo docker build -t mrchanche-xpu-jupyter:2.8.10 -f Dockerfile .
