@@ -20,3 +20,12 @@ On paper this should be a perfect GPU with decent ML performance and good enough
     - Get idle temp/power consumption
     - Get onload temp/power consumption
     - Video teardown, not sure where to put this
+
+Previous xpu benchmark
+
+- Arc Pro B50 16GB - Weird software/driver and fan issues
+    - Elapsed time: 94.30 seconds
+- Arc B580 12GB - Ubuntu 25.04 - Intel XPU IPEX Docker Container - 2.8.10-xpu
+    - Elapsed time: 58.34 seconds
+
+47.1174% Delta in performance, need to check/validate apples to apples in linux/container.
