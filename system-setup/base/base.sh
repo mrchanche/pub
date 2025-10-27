@@ -52,10 +52,10 @@ sudo snap remove --purge thunderbird firefox && \
 #curl -fsSL https://ollama.com/install.sh | sh && \
 
 # Download and install steam
-# wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb && \
-# sudo apt install ./steam.deb -y && \
+wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb && \
+sudo apt install ./steam.deb -y && \
 # Walk through updates
-# rm steam* && \
+rm steam* && \
 
 # Install Atuin
 bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh) && \
@@ -100,6 +100,12 @@ sudo apt remove unattended-upgrades -y && \
 # Reload Daemons
 sudo systemctl daemon-reload && \
 
+# Install miniconda
+mkdir -p ~/miniconda3 && \
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh && \
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 && \
+rm ~/miniconda3/miniconda.sh && \
+
 # Create snapshot
 sudo timeshift --create --comments "Base Install Completed" && \
 
@@ -117,3 +123,10 @@ echo "Install 'Hide Top Bar' and configure" && \
 echo "Find Ubuntu Dock, edit, select 'Intelligent autohide' " && \
 echo " " && \
 echo "In Edge install the theme 'Complete Black Theme for Microsoft Edge'"
+echo " " && \
+echo "Run the following to activate miniconda:" && \
+echo " " && \
+echo "source ~/miniconda3/bin/activate" && \
+echo "conda init --all" && \
+echo "conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main" && \
+echo "conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r"
