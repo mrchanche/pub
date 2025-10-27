@@ -47,7 +47,7 @@ case $STAGE in
 		conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
 		conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 		mkdir -p ~/Jupyter/cuda
-		conda create -n rocm python=3.13 -y
+		conda create -n cuda python=3.13 -y
 		
         if [[ $? -eq 0 ]]; then
             echo "Stage 2 completed."
@@ -65,7 +65,7 @@ case $STAGE in
 
 		pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
         
-        pip install jupyterlab accelerate diffusers tqdm IProgress transformers scikit-learn matplotlib pillow numpy pandas safetensors ipywidgets sentencepiece openai-whisper triton
+        pip install jupyterlab accelerate diffusers tqdm IProgress transformers scikit-learn matplotlib pillow numpy pandas safetensors ipywidgets sentencepiece openai-whisper
 
 		python3 -c 'import torch' 2> /dev/null && echo 'Success' || echo 'Failure'
 		python3 -c 'import torch; print(torch.cuda.is_available())'
