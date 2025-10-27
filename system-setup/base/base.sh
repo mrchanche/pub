@@ -7,14 +7,15 @@ sudo timedatectl && \
 # Install packages
 sudo apt update -y  && \
 sudo apt install python3-pip micro wget curl htop openssh-server ffmpeg kdenlive mangohud psensor git flatpak ydotool ydotoold remmina remmina-plugin-rdp python3-setuptools python3-wheel timeshift dos2unix gnome-shell-extensions gnome-shell-extension-manager lxc lxc-templates bridge-utils gimp -y  && \
+
+# Remove apt packages
 sudo apt-get remove --purge "libreoffice*" transmission-gtk rhythmbox shotwell -y && \
 
 
-
 # Create the lxc group
-sudo groupadd lxc
+sudo groupadd lxc && \
 # Add yourself to the group
-sudo usermod -aG lxc $USER
+sudo usermod -aG lxc $USER && \
 
 # Add repo and install gpu screen recorder (Works with Radeon on Wayland)
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
