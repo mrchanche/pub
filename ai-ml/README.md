@@ -1,3 +1,3 @@
 # GPU Machine Learning and AI Notes
 
-### <a href="scratchpad/">Scratchpad</a>
+### <a href="scratchpad/scikit-learn-1-7-for-beginners">Scikit Learn 1.7 For Beginners</a>
