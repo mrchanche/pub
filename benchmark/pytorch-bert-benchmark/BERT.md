@@ -307,6 +307,9 @@ import time
 import tqdm
 import warnings
 
+# Clear cache
+torch.xpu.empty_cache()
+
 warnings.filterwarnings("ignore")
 
 # Function to set the number of CPU threads
@@ -470,4 +473,8 @@ for i in tqdm.tqdm(range(benchmarkLoops)):
 end_time = time.time()
 elapsed_time = end_time - start_time
 print(f"Elapsed time: {elapsed_time:.2f} seconds")
+
+# Clear cache and vram
+del model, tokenizer
+torch.xpu.empty_cache()
 ```

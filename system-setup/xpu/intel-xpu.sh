@@ -34,7 +34,6 @@ clinfo | grep "Device Name" && \
 
 # Add user to group render - /dev/dri/renderD*
 sudo gpasswd -a ${USER} render && \
-newgrp render && \
 
 # Create xpu-ipex container working folder
 mkdir -p ~/jupyter-xpu && \
@@ -56,4 +55,7 @@ chmod +x ~/xpu-ipex-docker.sh && \
 # Wrap up
 echo "Finished, you may need to logout/login for groups to take effect" && \
 echo " " && \
-echo "Check your home directory for xpu-ipex-docker.sh, this will spin up the Intel XPU-Ipex container"
+echo "Check your home directory for xpu-ipex-docker.sh, this will spin up the Intel XPU-Ipex container" && \
+
+newgrp render
+

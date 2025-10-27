@@ -11,7 +11,6 @@ sudo apt install python3-pip micro wget curl htop openssh-server ffmpeg kdenlive
 # Remove apt packages
 sudo apt-get remove --purge "libreoffice*" transmission-gtk rhythmbox shotwell -y && \
 
-
 # Create the lxc group
 sudo groupadd lxc && \
 # Add yourself to the group
@@ -26,7 +25,7 @@ flatpak install flathub com.obsproject.Studio && \
 
 # Create gpu screen recorder bash shortcut
 touch ~/gpu_screen_recorder.sh && \
-echo '#!/bin/bash' >> ~/gpu_screen_recorder.sh && \
+echo '#!/bin/bash' > ~/gpu_screen_recorder.sh && \
 echo ' ' >> ~/gpu_screen_recorder.sh && \
 echo 'flatpak run com.dec05eba.gpu_screen_recorder' >> ~/gpu_screen_recorder.sh && \
 
@@ -53,10 +52,10 @@ sudo snap remove --purge thunderbird firefox && \
 #curl -fsSL https://ollama.com/install.sh | sh && \
 
 # Download and install steam
-wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb && \
-sudo apt install ./steam.deb -y && \
+# wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb && \
+# sudo apt install ./steam.deb -y && \
 # Walk through updates
-rm steam* && \
+# rm steam* && \
 
 # Install Atuin
 bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh) && \
@@ -64,6 +63,7 @@ bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh) && \
 # Setup ydotool
 sudo usermod -aG input $LOGNAME && \
 
+mkdir -p /home/pcarroll/.config/autostart && \
 echo 'KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/80-uinput.rules > /dev/null && \
 echo 'color-link default "[Desktop Entry]"' > /home/pcarroll/.config/autostart/ydotoold.desktop && \
 echo 'color-link default "Type=Application"' >> /home/pcarroll/.config/autostart/ydotoold.desktop && \
