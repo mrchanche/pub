@@ -40,16 +40,11 @@ sudo apt install ./code_1.102.1-1752598717_amd64.deb -y && \
 rm microsoft-edge* && \
 rm code_* && \
 
-# SDR++
-#wget https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/nightly/sdrpp_ubuntu_noble_amd64.deb && \
-#sudo apt install ./sdrpp_ubuntu_noble_amd64.deb -y && \
-#rm sdrpp_ubuntu_noble_amd64.deb && \
-
 # Remove mozilla
 sudo snap remove --purge thunderbird firefox && \
 
 # Install Ollama
-#curl -fsSL https://ollama.com/install.sh | sh && \
+curl -fsSL https://ollama.com/install.sh | sh && \
 
 # Download and install steam
 wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb && \
