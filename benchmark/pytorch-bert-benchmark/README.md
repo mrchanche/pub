@@ -86,6 +86,8 @@ Batch Size 5, 1 Epoch, 10 Iterations Mixed Precision, All ran in Windows 11 with
     - Elapsed time: 88.24 seconds **Yes the same exact time as WSL2 22.04 LTS**
   - RTX 2080 Ti HP Blower - 1816mhz@0.850v - 155w underload
     - Elapsed time: 89.58 seconds
+  - Arc Pro B50 16GB - Ubuntu 24.04 - Intel XPU IPEX Docker Container - 2.8.10-xpu
+    - Elapsed time: 91.51 seconds
   - Arc Pro B50 16GB - Weird launch software/driver and fan issues
     - Elapsed time: 94.30 seconds
   - Arc Pro B50 16GB - 2 months post launch 32.0.101.6979 pro drivers - Fans work fine now (silent)
