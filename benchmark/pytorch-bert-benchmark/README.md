@@ -86,8 +86,10 @@ Batch Size 5, 1 Epoch, 10 Iterations Mixed Precision, All ran in Windows 11 with
     - Elapsed time: 88.24 seconds **Yes the same exact time as WSL2 22.04 LTS**
   - RTX 2080 Ti HP Blower - 1816mhz@0.850v - 155w underload
     - Elapsed time: 89.58 seconds
-  - Arc Pro B50 16GB - Weird software/driver and fan issues
+  - Arc Pro B50 16GB - Weird launch software/driver and fan issues
     - Elapsed time: 94.30 seconds
+  - Arc Pro B50 16GB - 2 months post launch 32.0.101.6979 pro drivers - Fans work fine now (silent)
+    - Elapsed time: 95.49 seconds
   - RTX 3090 Ti Founders Edition 24GB - 1560mhz@0.800v +800 mem
     - Elapsed time: 97.39 seconds
   - RX 9070 XT Ubuntu 24.10 - ROCm 6.3.4 Bare Metal - No official support
