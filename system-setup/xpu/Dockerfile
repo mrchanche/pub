@@ -3,6 +3,7 @@ FROM intel/intel-extension-for-pytorch:2.8.10-xpu-pip-jupyter
 # Install additional pip packages
 RUN pip install --no-cache-dir \
     scikit-learn \
+	ipywidgets \
     IProgress \
     transformers \
     matplotlib \
