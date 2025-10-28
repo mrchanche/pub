@@ -11,7 +11,8 @@ RUN pip install --no-cache-dir \
     openai-whisper \
     openvino \
     openvino-dev \
-    accelerate
+    accelerate \
+    bitsandbytes
 RUN apt update -y && apt install ffmpeg -y
 
 # Set working directory

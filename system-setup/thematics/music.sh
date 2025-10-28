@@ -2,6 +2,7 @@
 
 # yt-dlp should already be installed but if now
 #pip install yt-dlp
+# https://github.com/yt-dlp/yt-dlp
 
 # -P "download/folder/here"
 # -x download audio only
