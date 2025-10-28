@@ -1,3 +1,0 @@
-# Keras 3: Hands-On Deep Learning with Python, Neural Networks, CNNs, and Generative AI Models (Rheinwerk Computing)
-
-This book releases Oct 29th 2025, I haven't worked with Keras, just Pytorch so I'm excited to see how Keras can make things a little easier by directly addressing models without building boilerplate classes etc...

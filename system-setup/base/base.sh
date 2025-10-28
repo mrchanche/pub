@@ -101,6 +101,9 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 && \
 rm ~/miniconda3/miniconda.sh && \
 
+# Install yt-dlp audio/video downloader, great for grabbing mp3's of yt videos
+pip install yt-dlp && \
+
 # Create snapshot
 sudo timeshift --create --comments "Base Install Completed" && \
 
