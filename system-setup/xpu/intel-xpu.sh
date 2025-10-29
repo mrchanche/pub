@@ -36,21 +36,34 @@ clinfo | grep "Device Name" && \
 sudo gpasswd -a ${USER} render && \
 
 # Create xpu-ipex container working folder
-mkdir -p ~/jupyter-xpu && \
+mkdir -p ~/jupyter-torch-xpu && \
+mkdir -p ~/jupyter-tensorflow-xpu && \
 
-# Build custom docker image based on intel/intel-extension-for-pytorch:2.8.10-xpu-pip-jupyter
-sudo docker build -t mrchanche-xpu-jupyter:2.8.10 -f Dockerfile . && \
+# Build custom docker image based on intel torch and tensorflow containers
+sudo docker build -t mrchanche-xpu-torch-jupyter:2.8.10 -f ~/Github/pub/system-setup/xpu/torch-dockerfile/Dockerfile . && \
+sudo docker build -t mrchanche-xpu-tensorflow-jupyter:2.15.0 -f ~/Github/pub/system-setup/xpu/tensorflow-dockerfile/Dockerfile . && \
 
-# Create xpu-ipex-docker.sh in ~/
-echo '#!/bin/bash' > ~/xpu-ipex-docker.sh && \
-echo 'sudo docker run -it --rm \' >> ~/xpu-ipex-docker.sh && \
-echo '    -p 8888:8888 \' >> ~/xpu-ipex-docker.sh && \
-echo '    --device /dev/dri \' >> ~/xpu-ipex-docker.sh && \
-echo '    -v /dev/dri/by-path:/dev/dri/by-path \' >> ~/xpu-ipex-docker.sh && \
-echo '    -v ~/jupyter-xpu:/jupyter \' >> ~/xpu-ipex-docker.sh && \
-echo '    -w /jupyter \' >> ~/xpu-ipex-docker.sh && \
-echo '    mrchanche-xpu-jupyter:2.8.10' >> ~/xpu-ipex-docker.sh && \
-chmod +x ~/xpu-ipex-docker.sh && \
+# Create xpu-ipex-torch-docker.sh in ~/
+echo '#!/bin/bash' > ~/xpu-ipex-torch-docker.sh && \
+echo 'sudo docker run -it --rm \' >> ~/xpu-ipex-torch-docker.sh && \
+echo '    -p 8888:8888 \' >> ~/xpu-ipex-torch-docker.sh && \
+echo '    --device /dev/dri \' >> ~/xpu-ipex-torch-docker.sh && \
+echo '    -v /dev/dri/by-path:/dev/dri/by-path \' >> ~/xpu-ipex-torch-docker.sh && \
+echo '    -v ~/jupyter-torch-xpu:/jupyter \' >> ~/xpu-ipex-torch-docker.sh && \
+echo '    -w /jupyter \' >> ~/xpu-ipex-torch-docker.sh && \
+echo '    mrchanche-xpu-torch-jupyter:2.8.10' >> ~/xpu-ipex-torch-docker.sh && \
+chmod +x ~/xpu-ipex-torch-docker.sh && \
+
+# Create xpu-ipex-tensorflow-docker.sh in ~/
+echo '#!/bin/bash' > ~/xpu-ipex-tensorflow-docker.sh && \
+echo 'sudo docker run -it --rm \' >> ~/xpu-ipex-tensorflow-docker.sh && \
+echo '    -p 8888:8888 \' >> ~/xpu-ipex-tensorflow-docker.sh&& \
+echo '    --device /dev/dri \' >> ~/xpu-ipex-tensorflow-docker.sh && \
+echo '    -v /dev/dri/by-path:/dev/dri/by-path \' >> ~/xpu-ipex-tensorflow-docker.sh && \
+echo '    -v ~/jupyter-tensorflow-xpu:/jupyter \' >> ~/xpu-ipex-tensorflow-docker.sh && \
+echo '    -w /jupyter \' >> ~/xpu-ipex-tensorflow-docker.sh && \
+echo '    mrchanche-xpu-tensorflow-jupyter:2.15.0' >> ~/xpu-ipex-tensorflow-docker.sh && \
+chmod +x ~/xpu-ipex-tensorflow-docker.sh && \
 
 # Wrap up
 echo "Finished, you may need to logout/login for groups to take effect" && \
