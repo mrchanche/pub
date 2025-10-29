@@ -137,6 +137,8 @@ Batch Size 5, 1 Epoch, 10 Iterations Mixed Precision, All ran in Windows 11 with
     - Elapsed time: 540.30 seconds
   - Core Ultra 9 285H Laptop CPU Arc 140T iGPU Running on XPU w/ IPEX
     - Elapsed time: 544.68 seconds
+  - PNY XLR8 GTX 1660 SUPER OC - No AMP
+    - Elapsed time: 590.51 seconds
   - Core Ultra 9 285H Laptop CPU Arc 140T iGPU Running on XPU
     - Elapsed time: 672.29 seconds
 - F Tier "Potato Performance"
