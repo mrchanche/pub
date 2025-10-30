@@ -6,7 +6,7 @@ sudo timedatectl && \
 
 # Install packages
 sudo apt update -y  && \
-sudo apt install python3-pip micro wget curl htop openssh-server ffmpeg kdenlive mangohud psensor git flatpak ydotool ydotoold remmina remmina-plugin-rdp python3-setuptools python3-wheel timeshift dos2unix gnome-shell-extensions gnome-shell-extension-manager lxc lxc-templates bridge-utils gimp -y  && \
+sudo apt install python3-pip micro wget curl htop openssh-server ffmpeg kdenlive mangohud psensor git flatpak ydotool ydotoold remmina remmina-plugin-rdp python3-setuptools python3-wheel timeshift dos2unix gnome-shell-extensions gnome-shell-extension-manager lxc lxc-templates bridge-utils gimp moc cava -y  && \
 
 # Remove apt packages
 sudo apt-get remove --purge "libreoffice*" transmission-gtk rhythmbox shotwell -y && \
