@@ -88,3 +88,38 @@ Take inputs with labels (images and labels), make predictions, compare with real
 The nn layers (128) contain the patterns the ml discovers. You cannot memorize 10kk hand written images, but you can learn 10 patterns that can categorize 10kk images.
 
 2.2 - page 49
+
+### Supervised Learning
+
+- Supervised Learning
+    - Show the machine characteristics of a thing
+    - Machine learning nature of the thing
+    - Start with knowing correct answers and the desired output
+        - labels and features, or inputs and classifications
+        - high start cost as data must be clean and labeled
+    - Typically you need a lot of examples
+    - Learning should be very gradual
+
+ML if you dont have labels = Unsupervised learning
+ML if you have labels = Supervised Learning
+Supervised Learning if you have continuous value answers = Regression
+Supervised Learning if you have Y/N answers = Binary Classification
+Supervised Learning if you have to pick a single category = Multi-class classification
+Supervised Learning if you have to pick multiple categories = Multi-Label Classifciation
+
+- Person Y/N
+    - Job Type
+        - Male or Female Person and Job Type
+
+Regression like linear or non linear regression is predicting a number and not really a classification. Predicting an expected value of something at a future date.
+
+Things like autonomous driving use basically all forms at the same time. Classifying singletons, classifying things with many categories, predicting future distance requirements etc...
+
+### Unsupervised Learning
+
+pg 59
+
+No right or wrong answers, only patterns discovered.
+
+Naturally sorting things into groups without knowning what they are is Unsupervised Learning. IE, sorting toys like shape, sex, size, style, etc...
+
