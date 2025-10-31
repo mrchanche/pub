@@ -31,35 +31,60 @@ Code snippets at this point can be skipped, they are just for show and not part 
 - sklearn
     - contains things to test with (datasets)
 
-Keras3 example of 
+Keras3 example:
+
+```bash
+pip install tensorflow keras keras-cv keras-hub fqdn ipykernel jupyterlab matplotlib scikit-learn tqdm
+```
 
 ```python
-# import keras, defaults to tensorflow backend
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import datasets
+digits = datasets.load_digits()
+
+print(digits.data.shape)
+
+_, axes = plt.subplots(nrows=1, ncols=4, figsize=(15, 3))
+for ax, image, label in zip(axes, digits.images, digits.target):
+    ax.set_axis_off()
+    ax.imshow(image, cmap=plt.cm.gray_r, interpolation="nearest")
+    ax.set_title("Training: %i" % label)
+
+# Import necessary libraries
 import keras
 from keras.layers import Dense
+from sklearn.datasets import load_digits
+
+# Load the digits dataset
+digits = load_digits()
+data = digits.data  # Shape: (1797, 64)
 
 # Define the sequential model
 model = keras.Sequential([
-    # Determine 128 things about the image, the features
-    # Input shape is 64, because 8x8 image = 64 pixels
-    # (64,) is a tuple and not a number, the shape should be a tuple
-    Dense(128, activation='relu', input_shape=(64,)),
-    # 10 is the output layer, a number should fall into 1 of 10
-    Dense(10, activation='softmax') # 10 classes (digits 0-9)
+    Dense(128, activation='relu', input_shape=(64,)), # 64, is the tuple
+    Dense(10, activation='softmax')
 ])
 
-model.compile(optimizer='adam',
-    loss='sparse_categorical_crossentropy', 
-    metrics=['accuracy'])
+# Prepare for machine learning
+# Setup for the ML 'act', drives ml strategy
+model.compile(optimizer='adam', 
+              loss='sparse_categorical_crossentropy', 
+              metrics=['accuracy'])
 
-# Reshape the target variable to be a 2D array for Keras
-y = digits.target.reshape(-1, 1) # Learn! 
-model.fit(data, digits.target, epochs=10)
+# No need to reshape y if using sparse_categorical_crossentropy
+# Just use digits.target directly (it's already 1D: shape (1797,))
+model.fit(data, digits.target, epochs=10, validation_split=0.2)
 ```
 
-Softmax says the ml should add up the confidence to 100%
+**Softmax** says the ml should add up the confidence to 100%
 
 - 80% sure the number is 1
 - 18% sure the number is 7
 - 2% sure it could be xyz
 
+Take inputs with labels (images and labels), make predictions, compare with real answers, adjust weights based on if it was wrong or not.
+
+The nn layers (128) contain the patterns the ml discovers. You cannot memorize 10kk hand written images, but you can learn 10 patterns that can categorize 10kk images.
+
+2.2 - page 49
