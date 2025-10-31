@@ -33,7 +33,7 @@ Code snippets at this point can be skipped, they are just for show and not part 
 
 Keras3 example of 
 
-'''python
+```python
 # import keras, defaults to tensorflow backend
 import keras
 from keras.layers import Dense
@@ -55,7 +55,7 @@ model.compile(optimizer='adam',
 # Reshape the target variable to be a 2D array for Keras
 y = digits.target.reshape(-1, 1) # Learn! 
 model.fit(data, digits.target, epochs=10)
-'''
+```
 
 Softmax says the ml should add up the confidence to 100%
 
