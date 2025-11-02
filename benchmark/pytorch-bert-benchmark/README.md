@@ -141,6 +141,8 @@ Batch Size 5, 1 Epoch, 10 Iterations Mixed Precision, All ran in Windows 11 with
     - Elapsed time: 590.51 seconds
   - Core Ultra 9 285H Laptop CPU Arc 140T iGPU Running on XPU
     - Elapsed time: 672.29 seconds
+  - Ryzen 9 AI 370 890M iGPU Running on ROCm 7.1 container (ROCm on Ryzen) 16GB Shared
+    - Elapsed time: 820.08 seconds
 - F Tier "Potato Performance"
   - Ryzen 9 9950X 5.6ghz CO -30 All Core 65c limit 96GB DDR5 6000MHZ CL30 30 threads
     - Elapsed time: 1154.54 seconds
@@ -152,6 +154,8 @@ Batch Size 5, 1 Epoch, 10 Iterations Mixed Precision, All ran in Windows 11 with
   	- Elapsed time: 1999.15 seconds
   - i9-14900K 5.4ghz all core locked 64GB 6800MHZ DDR5 20 threads
     - Elapsed time: 2381.41 seconds
+  - Ryzen 9 AI 370 CPU Only 12 Threads AMP
+    - Elapsed time: 3088.70 seconds
   - Core Ultra 265K - 16 threads - 125w PL1/PL2 - -80mv pcore -60mv / ecore 48x ecore (No AMP possible, only FP32 back-propagation)
     - Elapsed time: 3728.71 seconds
   - Ryzen 9 7945HX3D 100w - Minisforum BD790iX3D 30 threads
