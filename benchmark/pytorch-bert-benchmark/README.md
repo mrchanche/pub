@@ -131,6 +131,8 @@ Batch Size 5, 1 Epoch, 10 Iterations Mixed Precision, All ran in Windows 11 with
   - Arc A770 16GB (No AMP)
     - Elapsed time: 229.07 seconds
 - D Tier "Technically These Work"
+  - Sapphire RX 9060 XT 16GB - Win11 Preview Driver 25.20.01.14
+    - Elapsed time: 317.38 seconds
   - Titan Xp 12GB
     - Elapsed time: 375.25 seconds
   - Arc A380 Sparkle ELF 6GB - 43w max slot power w/ IPEX
