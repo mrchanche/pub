@@ -122,6 +122,8 @@ Batch Size 5, 1 Epoch, 10 Iterations Mixed Precision, All ran in Windows 11 with
 - C Tier "Totally Useable"
   - Arc A770 16GB - OneAPI 2025.2.1 - Pytorch 2.8 with IPEX optimization
     - Elapsed time: 166.46 seconds
+  - Arc A770 16GB - OneAPI 2025.3.0 - Pytorch 2.8 with IPEX optimization
+    - Elapsed time: 167.92 seconds
   - Arc A770 16GB (AMP Working WSL2)
     - Elapsed time: 176.26 seconds
   - Google Colab Tesla T4 16GB
