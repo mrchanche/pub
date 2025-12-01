@@ -35,7 +35,7 @@ sudo snap install shotcut --classic && \
 # Microsoft shill
 wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_138.0.3351.121-1_amd64.deb && \
 wget https://vscode.download.prss.microsoft.com/dbazure/download/stable/7adae6a56e34cb64d08899664b814cf620465925/code_1.102.1-1752598717_amd64.deb && \
-sudo apt install ./microsoft-edge-stable_138.0.3351.121-1_amd64.deb && \
+sudo apt install ./microsoft-edge-stable_138.0.3351.121-1_amd64.deb -y && \
 sudo apt install ./code_1.102.1-1752598717_amd64.deb -y && \
 rm microsoft-edge* && \
 rm code_* && \
@@ -102,7 +102,17 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 && \
 rm ~/miniconda3/miniconda.sh && \
 
 # Install yt-dlp audio/video downloader, great for grabbing mp3's of yt videos
-pip install yt-dlp && \
+# Run this after you are in your base conda environment
+#pip install yt-dlp && \
+
+# If running older nvidia GPUs ie GP100's install fan control
+sudo apt install curl apt-transport-https -y  && \
+curl -1sLf \
+  'https://dl.cloudsmith.io/public/coolercontrol/coolercontrol/setup.deb.sh' \
+  | sudo -E bash && \
+sudo apt update -y && \
+sudo apt install coolercontrol -y && \
+# From here you can create a custom profile, mixed results on AMD gpus, just use lactd
 
 # Create snapshot
 sudo timeshift --create --comments "Base Install Completed" && \
