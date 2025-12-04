@@ -39,7 +39,7 @@ On-Demand Activation, services can wait for a connect over a socket to arrive be
     - systemd-resolved dns resolution
     - there are others as well
 
-Boot Process in Systemd
+### Boot Process in Systemd
 
 1. Kernel starts systemd and executes `/sbin/init` a symlink to `/lib/systemd/systemd`
 2. Systemd mounts the filesystems, setup up cgroups for resource control and starts essential units
@@ -47,7 +47,7 @@ Boot Process in Systemd
 4. Graphical mode if enabled, transition to graphical.target (runlevel 5) to start display manager
 5. Runtime Management handled dynamic changes like starting services on demand
 
-Common Systemd commands
+### Common Systemd commands
 
 - `systemctl start/stop/restart <unit>`
     - control a single unit
@@ -62,7 +62,7 @@ Common Systemd commands
 - `systemctl daemon-reload`
     - reload configs after editing unit files
 
-Systemd Units
+### Systemd Units
 
 A unit any thing 'thing' that systemd can activate, deactivate, monitor, or manage. 
 
@@ -92,7 +92,7 @@ Dependencies can be declared by units via directives like:
 
 Units can be pulled in via targets (a grouping of systemd units).
 
-Unit Files
+### Unit Files
 
 These are plain-text config riles that define how systemd will manage a specific unit. Unit files have an INI like syntax with KV pairs, main sections are written in `[Brackets]`
 
@@ -123,7 +123,7 @@ Restart=This is the failure policy, always, or on-failure
 WantedBy=The target that wants this unit, multi-user.target
 ```
 
-Example custom unit file
+### Example custom unit file
 
 ```ini
 [Unit]
@@ -143,7 +143,7 @@ Group=mygroup
 WantedBy=multi-user.target
 ```
 
-Unit File Locations and Precedence
+### Unit File Locations and Precedence
 
 - `/etc/systemd/system`
     - Local customizations/overrides
@@ -170,7 +170,7 @@ When creating unit files:
 - Debug with `systemd-analyze verify THING.service`
 - Logs `journalctl -u THING -f`
 
-NGINX Unit file example
+### NGINX Unit file example
 
 ```ini
 [Unit]
@@ -192,7 +192,7 @@ PrivateTmp=true
 WantedBy=multi-user.target
 ```
 
-Example that starts transmission client on boot for ubuntu desktop
+### Example that starts transmission client on boot for ubuntu desktop
 
 ```ini
 # /etc/systemd/system/transmission-daemon.service
